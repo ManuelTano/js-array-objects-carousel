@@ -11,6 +11,7 @@ img {
     width: 100%;
     object-position: center;
     border-radius: 15px;
+    display: none;
 }   
 
 
@@ -41,4 +42,19 @@ img {
 
 .bi {
     font-size: 50px;
+}
+
+#titolo {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+}
+
+#descrizione {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    color: white;
+
 }

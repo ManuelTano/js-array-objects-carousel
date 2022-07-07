@@ -21,95 +21,93 @@
 
 
 // Array di immagini
-// const images = [
-//     {
-//       url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
-//       title: 'Svezia',
-//       description:
-//         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-//     },
+
+const images = [
+    {
+      url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
+      title: 'Svezia',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
+    },
   
-//     {
-//       url: 'https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg',
-//       title: 'Perù',
-//       description:
-//         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-//     },
+    {
+      url: 'https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg',
+      title: 'Perù',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
+    },
   
-//     {
-//       url: 'https://img.itinari.com/pages/images/original/0d3ed180-d22d-48e8-84df-19c4d888b41f-62-crop.jpg?ch=DPR&dpr=2.625&w=1600&s=7ebd4b5a9e045f41b4e0c7c75d298d6c',
-//       title: 'Chile',
-//       description:
-//         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-//     },
-//     {
-//       url: 'https://static1.evcdn.net/images/reduction/1583177_w-1920_h-1080_q-70_m-crop.jpg',
-//       title: 'Argentina',
-//       description:
-//         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-//     },
-//     {
-//       url: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop',
-//       title: 'Colombia',
-//       description:
-//         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-//     },
-//   ];
+    {
+      url: 'https://img.itinari.com/pages/images/original/0d3ed180-d22d-48e8-84df-19c4d888b41f-62-crop.jpg?ch=DPR&dpr=2.625&w=1600&s=7ebd4b5a9e045f41b4e0c7c75d298d6c',
+      title: 'Chile',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
+    },
+    {
+      url: 'https://static1.evcdn.net/images/reduction/1583177_w-1920_h-1080_q-70_m-crop.jpg',
+      title: 'Argentina',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
+    },
+    {
+      url: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop',
+      title: 'Colombia',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
+    },
+  ];
 
 
-// const maximage = document.getElementById('carosel');
+let maximage = document.getElementById('carosel');
+let title = document.querySelectorAll('titolo');
+let descrizione = document.querySelectorAll('description');
 
 
-// let imgContent;
+for (let i = 0; i < images.length; i++) {
+    let imageElement = images[i];
+    maximage.innerHTML += `<img src=${imageElement.url} alt=${imageElement.title}>
+    <h2 id="titolo">${imageElement.title}</h2>
+    <p id="descrizione"> ${imageElement.description}</p>`;
 
-// for (let i = 0; i < images.length; i++) {
-
-//     imgContent += `images[${url}]`;
-
-// }
+}
 
 
-// maximage.innerHTML += imgContent;
+const imgElements = document.querySelectorAll('img');
 
-// const imgElements = document.querySelectorAll('#carosel img');
-// console.log(imgElements);
+let currentActiveIndex = 0;
 
-// let currentActiveIndex = 0;
+imgElements[currentActiveIndex].classList.add('active');
 
-// imgElements[currentActiveIndex].classList.add('active');
+const btnNext = document.getElementById('next');
+const btnPrev = document.getElementById('prev');
 
-// // MILESTONE 3
+ btnPrev.addEventListener('click', function() {
 
-// const btnNext = document.getElementById('next');
-// const btnPrev = document.getElementById('prev');
+     imgElements[currentActiveIndex].classList.remove('active');
 
-// btnPrev.addEventListener('click', function() {
+     currentActiveIndex--; 
 
-//     imgElements[currentActiveIndex].classList.remove('active');
-
-//     currentActiveIndex--; 
-
-//     if (currentActiveIndex < 0) {
+     if (currentActiveIndex < 0) {
     
-//         currentActiveIndex = imgElements.length - 1;
-//     }
+         currentActiveIndex = images.length - 1;
+     }
 
-//     imgElements[currentActiveIndex].classList.add('active');
+     imgElements[currentActiveIndex].classList.add('active');
 
-// });
+ });
 
-// btnNext.addEventListener('click', function() {
+ btnNext.addEventListener('click', function() {
     
-//     imgElements[currentActiveIndex].classList.remove('active');
+     imgElements[currentActiveIndex].classList.remove('active');
 
-//     currentActiveIndex++;
+     currentActiveIndex++;
 
-//     if (currentActiveIndex === imgElements.length) {
+     if (currentActiveIndex === images.length) {
    
-//         currentActiveIndex = 0;
-//     }
+         currentActiveIndex = 0;
+     }
 
-//     imgElements[currentActiveIndex].classList.add('active');
+     imgElements[currentActiveIndex].classList.add('active');
 
-// });
+ });
 
