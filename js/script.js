@@ -59,20 +59,22 @@ const images = [
 
 
 let maximage = document.getElementById('carosel');
-let title = document.querySelectorAll('titolo');
-let descrizione = document.querySelectorAll('description');
+let title = document.getElementById('titolo');
+let descrizione = document.getElementById('descrizione');
 
 
 for (let i = 0; i < images.length; i++) {
     let imageElement = images[i];
-    maximage.innerHTML += `<img src=${imageElement.url} alt=${imageElement.title}>
-    <h2 id="titolo">${imageElement.title}</h2>
-    <p id="descrizione"> ${imageElement.description}</p>`;
+    maximage.innerHTML += `<div class="galleria">
+    <img src=${imageElement.url} alt=${imageElement.title}>
+    <h2 id="titolo" class="fw-bold">${imageElement.title}</h2>
+    <p id="descrizione"> ${imageElement.description}</p>
+    </div>`;
 
 }
 
 
-const imgElements = document.querySelectorAll('img');
+const imgElements = document.querySelectorAll('.galleria');
 
 let currentActiveIndex = 0;
 

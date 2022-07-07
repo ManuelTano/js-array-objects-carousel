@@ -5,13 +5,16 @@
     
 }
 
+.galleria {
+    display: none;
+}
+
 img {
     object-fit: cover;
     height: 100%;
     width: 100%;
     object-position: center;
     border-radius: 15px;
-    display: none;
 }   
 
 
@@ -47,14 +50,14 @@ img {
 #titolo {
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 15px;
     color: white;
 }
 
 #descrizione {
     position: absolute;
-    top: 35px;
-    right: 5px;
+    top: 50px;
+    right: 15px;
     color: white;
 
 }
