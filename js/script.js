@@ -113,3 +113,18 @@ const btnPrev = document.getElementById('prev');
 
  });
 
+// BONUS 2
+
+ setInterval(function() {
+
+    imgElements[currentActiveIndex].classList.remove('active');
+
+     currentActiveIndex++;
+
+     if (currentActiveIndex === images.length) {
+   
+         currentActiveIndex = 0;
+     }
+
+     imgElements[currentActiveIndex].classList.add('active');
+ }, 3000);
