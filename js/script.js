@@ -61,7 +61,7 @@ const images = [
 let maximage = document.getElementById('carosel');
 let title = document.getElementById('titolo');
 let descrizione = document.getElementById('descrizione');
-
+let miniatura = document.querySelector('.thumbnails');
 
 for (let i = 0; i < images.length; i++) {
     let imageElement = images[i];
@@ -69,6 +69,9 @@ for (let i = 0; i < images.length; i++) {
     <img src=${imageElement.url} alt=${imageElement.title}>
     <h2 id="titolo" class="fw-bold">${imageElement.title}</h2>
     <p id="descrizione"> ${imageElement.description}</p>
+    </div>`;
+    miniatura.innerHTML += `<div class="col-2 rounded-1 py-5">
+    <img src=${imageElement.url} alt=${imageElement.title}>
     </div>`;
 
 }
